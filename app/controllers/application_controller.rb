@@ -3,5 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :null_session
   
-  before_filter :require_login
+  # before_filter :require_login
+
+  def getUserByToken(email, token)
+  	User.where(email: email, remember_me_token: token)
+  end
 end

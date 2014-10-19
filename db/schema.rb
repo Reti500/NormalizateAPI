@@ -11,12 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019045400) do
+ActiveRecord::Schema.define(version: 20141019112154) do
+
+  create_table "asignate_conversations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "conversation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "asignate_normas", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "norma_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "asignate_tags", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "discution_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "discution_id"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "conversations", force: true do |t|
+    t.string   "conversation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "discutions", force: true do |t|
+    t.string   "title"
+    t.string   "discution"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "normas", force: true do |t|
+    t.string   "category"
+    t.string   "clave"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                        null: false
     t.string   "crypted_password",             null: false
     t.string   "salt",                         null: false
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"
