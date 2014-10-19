@@ -1,5 +1,61 @@
 Rails.application.routes.draw do
 
+  get 'tags/index'
+
+  get 'tags/show'
+
+  get 'tags/new'
+
+  get 'tags/create'
+
+  get 'tags/edit'
+
+  get 'tags/update'
+
+  get 'tags/destroy'
+
+  get 'discutions/index'
+
+  get 'discutions/show'
+
+  get 'discutions/new'
+
+  get 'discutions/create'
+
+  get 'discutions/edit'
+
+  get 'discutions/update'
+
+  get 'discutions/destroy'
+
+  get 'conversations/index'
+
+  get 'conversations/show'
+
+  get 'conversations/new'
+
+  get 'conversations/create'
+
+  get 'conversations/edit'
+
+  get 'conversations/update'
+
+  get 'conversations/destroy'
+
+  get 'comments/index'
+
+  get 'comments/show'
+
+  get 'comments/new'
+
+  get 'comments/create'
+
+  get 'comments/edit'
+
+  get 'comments/update'
+
+  get 'comments/destroy'
+
   root :to => 'users#index'
   resources :user_sessions
   resources :users
